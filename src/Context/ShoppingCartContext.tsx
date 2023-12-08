@@ -1,16 +1,19 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, ReactNode } from "react";
 
-const shoppingCartContext = createContext({});
+type ShoppingCartProviderProps = {
+  children: ReactNode;
+};
+
+const ShoppingCartContext = createContext({});
 
 export function useShoppingCart() {
   return useContext(shoppingCartContext);
 }
 
-export function ShoppingCartProvider({children}
-    ShoppingCartProvider){
-        return(
-            <ShoppingCartProvider.Provider>
-                {children}
-            </ShoppingCartProvider.Provider>
-        )
-    }
+export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
+  return (
+    <ShoppingCartProvider.Provider value={{}}>
+      {children}
+    </ShoppingCartProvider.Provider>
+  );
+}
