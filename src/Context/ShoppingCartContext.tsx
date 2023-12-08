@@ -7,13 +7,13 @@ type ShoppingCartProviderProps = {
 const ShoppingCartContext = createContext({});
 
 export function useShoppingCart() {
-  return useContext(shoppingCartContext);
+  return useContext(ShoppingCartContext);
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
   return (
-    <ShoppingCartProvider.Provider value={{}}>
+    <ShoppingCartContext.Provider value={{}}>
       {children}
-    </ShoppingCartProvider.Provider>
+    </ShoppingCartContext.Provider>
   );
 }
